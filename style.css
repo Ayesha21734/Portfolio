@@ -568,3 +568,33 @@ body.dark-mode .project-detail-section .project-images img:hover {
         text-align: center;
     }
 }
+
+/* =========================================
+   MOBILE FIX: HERO SECTION ISOLATION
+   (This will NOT affect Desktop)
+   ========================================= */
+@media (max-width: 850px) {
+    /* 1. Stop the words from falling out of their box */
+    .hero-text-area .text-slider {
+        height: 60px !important; 
+        display: block !important;
+        position: relative;
+        margin-bottom: 20px;
+    }
+
+    /* 2. Separate the CV Button from the Text */
+    .hero-text-area .btn-outline {
+        display: inline-block !important;
+        margin-top: 30px !important;
+        margin-bottom: 30px !important; /* Creates a physical wall below the button */
+        position: relative;
+        z-index: 50 !important; /* Pulls button to the very front so it's clickable */
+    }
+
+    /* 3. Push the PhD Green Dot down so they never overlap */
+    .hero-text-area .phd-status {
+        position: relative;
+        z-index: 10;
+        margin-top: 20px !important;
+    }
+}
